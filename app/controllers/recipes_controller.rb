@@ -18,16 +18,19 @@ end
         recipe = Recipe.find_by(id: params[:id])
         if recipe
             render json: { errors: invalid.errors.full_messages }, status: :unprocessable_entity
-        # elseif recipe.valid?
-        #     recipe.update!(recipe_params)
-        #     render json: recipe, status: :ok
         else
             render json: {error: "Recipe not found"}, status: :not_found
         end
     end
 
-    # private
-    # def recipe_params
-
-    # end
+#     def destroy 
+#         recipe = Recipe.find_by(id: params[:id]) 
+    
+#         if recipe.destroy 
+#         head :no_content
+    
+#          else 
+#             render json: { error: recipe.errors.messages }, status: 422
+#         end 
+#         end
 end
