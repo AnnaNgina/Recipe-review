@@ -24,3 +24,11 @@ Review.create!([
         description:"The recipe was complicated and many ingredients"
     }
 ])  
+User.create!([
+    {
+        first_name:"ann",
+        last_name:"ngina",
+        email:"annastaciangina96@gmail.com",
+        password_digest:"123456"
+    }
+])
