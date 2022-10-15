@@ -59,7 +59,7 @@ a:hover{
 #slider{
   height: 400px;
   width: 100%;
-  background-image: url("/public/pasta.jpg");
+  background-image: url("/public/food.jpg");
   opacity: 0.6;
 
   
@@ -112,7 +112,7 @@ input[type=submit]:hover {
   background-color: rgb(48, 46, 46);
   color: rgb(4, 240, 228);
 }
-input[type=text], textarea {
+/* input[type=text], textarea {
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -126,11 +126,11 @@ input[type=text], textarea {
   overflow: hidden;
   border: solid black 1px;
   
-}
+} */
 #contact{
   width: 98.5%;
   height: auto;
-  background-color:black;
+  background-color:#2fffee;
   
 }
 form{
@@ -177,14 +177,28 @@ button{
 .btn.btn-outline-info {
   background-color:black;
   width:20%;
-  color: white;
+  color:#2fffee;
 
 
 }
 .form-inner{
-  border-radius:4px ;
-  border:2px solid black;
   width:40%;
   height: 40px;
- float:left;
+  text-align: center;
+  border: 2px;
+}
+.login{
+  
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+   box-sizing: border-box;
+   border: 2px;
+  border-radius: 5px;
+  
+}
+p{
+  color:blue;
+  font-weight: bold;
+  font-size: larger;
 }
