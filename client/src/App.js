@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Slider from './components/Slider';
 import { useState } from 'react';
+import LoginForm from './components/LoginForm';
 
 function App() {
   const adminUser = {
