@@ -36,7 +36,7 @@ function App() {
     <div className="App">
       {(user.email !="") ? (
         <div className="welcome">
-          <h2>Welcome, <span>{user.name}</span></h2>
+          <h2>Welcome to RS <span>{user.name}</span></h2>
           </div>
            ): (
             <LoginForm Login={Login} error={error} href="/home"/>

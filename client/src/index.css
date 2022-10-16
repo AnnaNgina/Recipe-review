@@ -59,7 +59,7 @@ a:hover{
 #slider{
   height: 400px;
   width: 100%;
-  background-image: url("/public/cones.jpg");
+  background-image: url("/public/mbuzi.jpg");
   opacity: 0.6;
 
   
@@ -198,7 +198,12 @@ button{
   
 }
 p{
-  color:blue;
+  color:black;
   font-weight: bold;
   font-size: larger;
+}
+p2{
+  color: white;
+  text-align: center;
+  padding-top: 40px;
 }

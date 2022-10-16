@@ -3,8 +3,8 @@ function Section() {
     return (
         <nav id="slider">
              <div className="slider-image">
-              <p>The system provide a platform for food,drinks </p>
-              <p>and fruits review. It provides access to posting recipe for any meal.</p>
+              <p2>The system provide a platform for food,drinks </p2>
+              <p2>and fruits review. It provides access to posting recipe for any meal.</p2>
             </div>
 
         </nav>
