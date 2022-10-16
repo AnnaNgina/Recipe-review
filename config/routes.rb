@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :reviews
   resources :users
+  resources :reviews
   # resources :reviews
   # resources :recipes
   # Define your application routes per the DSL in https://guid,es.rubyonrails.org/routing.html
