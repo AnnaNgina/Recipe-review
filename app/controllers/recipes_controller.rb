@@ -1,5 +1,5 @@
-lass RecipesController < ApplicationController
-    protect_from_forgery prepend: true
+class RecipesController < ApplicationController
+
 
     def index
      render json: Recipe.all, status: :ok
@@ -54,4 +54,4 @@ lass RecipesController < ApplicationController
         params.permit(:name, :image_url, :description)
     end    
 
-
+end
