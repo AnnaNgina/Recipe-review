@@ -6,7 +6,7 @@ import Nav from './components/Nav';
 import Slider from './components/Slider';
 import { useState } from 'react';
 import LoginForm from './components/LoginForm';
-import LoginF from './components/LoginF';
+
 
 function App() {
   const adminUser = {
@@ -46,7 +46,7 @@ function App() {
       <Slider/>
    
       <Footer/>
-      <LoginF/>
+      
       
     // </div>
   );
