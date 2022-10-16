@@ -53,5 +53,5 @@ lass RecipesController < ApplicationController
     def recipe_params
         params.permit(:name, :image_url, :description)
     end    
-end
+
 
