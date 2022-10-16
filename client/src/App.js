@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import Slider from './components/Slider';
 import { useState } from 'react';
 import LoginForm from './components/LoginForm';
+import AddRecipe from './components/AddRecipe';
 
 function App() {
   const adminUser = {
@@ -43,6 +44,7 @@ function App() {
       )}
       <Nav/>
       <Slider/>
+      <AddRecipe/>
       <Footer/>
     </div>
   );
