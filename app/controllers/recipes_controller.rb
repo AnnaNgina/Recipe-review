@@ -1,57 +1,57 @@
 class RecipesController < ApplicationController
-
-
-    def index
-     render json: Recipe.all, status: :ok
-    end   
-
-    def show
-        recipe = Recipe.find_by(id: params[:id])
-      if recipe
-          render json: recipe, status: :ok
-      else
-          render json: { error: "Review not found" }, status: :not_found
-      end
-    end
-
-    def create
-        recipe = Recipe.create(recipe_params)
+    rescue_from ActiveRecord::RecordNotFound, with: :render_error
+    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
+    
+    #  before_action :authorize
+    
+        def index
+           render json: Recipe.all,status: :ok
+        end 
+    
        
-
-        #  if recipe.save
-        render json: recipe, status: :created
-   
-
-    #   else
-    #     render json: { error: recipe.errors.messages }, status 422 
-    #     end
-    end   
-    def update
-        recipe = Recipe.find_by(id:params[:id])
-
-        if recipe
-            recipe.update(recipe_params)
-            render json:recipe ,status: :accepted
-
-        else
-            
-            render json:{error: "Recipe not found"}, status: :not_found
+    
+        def show
+            recipe= find_recipe
+            render json: recipe, status: :ok
         end
-    end        
-    def destroy
-        recipe = Recipe.find_by(id:params[:id])
-
-        if recipe
+    
+         def update
+            recipe = find_recipe
+            Recipe.update!(recipe_params)
+            render json: recipe
+        end
+    
+    
+        def create
+            recipe= Recipe.create!(recipe_params)
+            render json: recipe, status: :created
+        end
+    
+        def destroy
+            recipe = find_recipe
             recipe.destroy
             head :no_content
-        else
-            render json {error:"Recipe not found"}, status: :not_found
         end
-    end            
-
-    private
-    def recipe_params
-        params.permit(:name, :image_url, :description)
-    end    
-
-end
+    
+        private
+    
+        def render_error
+            render json: { error: "Recipe not found" }, status: :not_found
+         end
+        
+        def find_recipe
+             Recipe.find(params[:id])
+        end
+        
+        def recipe_params
+            params.permit(:name, :image_url, :description)
+        end
+    
+        def render_unprocessable_entity_response(invalid)
+            render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
+        end
+    
+        def authorize
+        return render json: { error: "Not authorized" }, status: :unauthorized unless session.include? :user_id
+        end
+      end

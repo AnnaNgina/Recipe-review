@@ -215,6 +215,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  activestorage (~> 7.0, >= 7.0.4)
   bootsnap
   capybara
   debug
