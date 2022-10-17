@@ -40,7 +40,7 @@ function Login({ onLogin }) {
 const Logo = styled.h1`
   font-family: "Times Roman", cursive;
   font-size: 3rem;
-  color: Blue;
+  color: orange;
   margin: 8px 0 16px;
 `;
 
